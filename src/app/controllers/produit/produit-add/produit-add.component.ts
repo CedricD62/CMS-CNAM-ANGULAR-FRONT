@@ -24,12 +24,14 @@ export class ProduitAddComponent implements OnInit {
   Variants!:Variant[];
   DateAjout!:Date;
   IsArchived!:Boolean
+  isCreated = false;
 
   constructor(
     private readonly produitService: ProduitService
   ) { }
 
   ngOnInit(): void {
+    
   }
 
   onSubmit(): void{
@@ -59,8 +61,7 @@ export class ProduitAddComponent implements OnInit {
       this.Tags = []
       this.Variants;
       this.DateAjout;
-      this.IsArchived: false;
+      this.IsArchived = false;
     });
   }
-
 }
