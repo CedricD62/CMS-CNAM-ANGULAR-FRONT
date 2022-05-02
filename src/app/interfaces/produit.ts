@@ -11,10 +11,10 @@ export interface Produit
     Price:Number;
     Tva:Number;
     Description:Description;
-    Strock:Stock;
+    Stock:Stock;
     Images:Image[];
     Tags:Tag[];
     Variants:Variant[];
     DateAjout:Date;
-    EstActif:boolean;
+    IsArchived:boolean;
 }
