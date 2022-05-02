@@ -13,7 +13,7 @@ import { Variant } from 'src/app/interfaces/variant';
   styleUrls: ['./produit-add.component.scss']
 })
 export class ProduitAddComponent implements OnInit {
-
+  Id!:Number
   Name!:string;
   Price!:Number;
   Tva!:Number;
@@ -23,7 +23,7 @@ export class ProduitAddComponent implements OnInit {
   Tags!:Tag[];
   Variants!:Variant[];
   DateAjout!:Date;
-  EstActif!:boolean;
+  IsArchived!:Boolean
 
   constructor(
     private readonly produitService: ProduitService
@@ -35,16 +35,31 @@ export class ProduitAddComponent implements OnInit {
   onSubmit(): void{
 
     const produit: Produit = {
-      Name : this.Name,
+      Id : this.Id,
+      Name: this.Name,
+      Price: this.Price,
+      Tva: this.Tva,
       Description: this.Description,
-      Images : this.Images,
-
+      Stock: this.Stock,
+      Images: this.Images,
+      Tags: this.Tags,
+      Variants: this.Variants,
+      DateAjout: this.DateAjout,
+      IsArchived: false
     };
     
     this.produitService.createProduit(produit).subscribe(() =>{
-      this.isCreated = true;
-      this.Name = "";
-      this.Description.;
+      this.Id =0;
+      this.Name;
+      this.Price;
+      this.Tva;
+      this.Description;
+      this.Stock;
+      this.Images = []
+      this.Tags = []
+      this.Variants;
+      this.DateAjout;
+      this.IsArchived: false;
     });
   }
 

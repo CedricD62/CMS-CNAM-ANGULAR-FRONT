@@ -1,6 +1,6 @@
 import { Routes } from "@angular/router";
 
-export const movieRoutes : Routes = [
+export const produitRoutes : Routes = [
     {
         path: 'add',
         loadChildren: () => import('./produit-add/produit-add.module').then(m=>m.ProduitAddModule)
