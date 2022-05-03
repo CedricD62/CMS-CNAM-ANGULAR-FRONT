@@ -4,5 +4,5 @@ export interface Description
     Name:string;
     Information:string;
     DateDescription:Date;
-    EstActif:boolean;
+    IsArchived:boolean;
 }

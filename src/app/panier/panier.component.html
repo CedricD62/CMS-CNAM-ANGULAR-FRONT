@@ -1,0 +1,65 @@
+<div *ngIf="produits.length === 0; then thenBlock else elseBlock"></div>
+
+<ng-template #thenBlock>
+  <h1 class="mt-4">Votre panier est vide! Faut acheter voyons!</h1>
+</ng-template>
+
+<ng-template #elseBlock>
+  <h1 class="mt-4">Votre panier</h1>
+
+  <table class="table table-striped mt-4">
+    <thead>
+    <tr>
+      <th>Article N°</th>
+      <th>Nom</th>
+      <th>Prix</th>
+      <th>Qté</th>
+      <th>TVA</th>
+      <th>Sous-total article</th>
+
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let produit of produits; index as id">
+      <td>{{id + 1}}</td>
+      <td>{{produit.Name}}</td>
+      <td>{{produit.Price.valueOf() | currency:'EUR':'symbol':undefined:'fr-FR'}}</td>
+      <td>{{getQte(produit.Id)}} %</td>
+      <td>{{produit.Tva.valueOf()}} %</td>
+      <td>{{getSsTotal(produit.Id) | currency:'EUR':'symbol':undefined:'fr-FR'}} %</td>
+
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="5" style="border: none"></td>
+      <td colspan="1">Nombre d'articles</td>
+      <td colspan="1">{{produits.length}}</td>
+    </tr>
+    <tr>
+      <td colspan="5" style="border: none"></td>
+      <td colspan="1">TOTAL HT</td>
+      <td colspan="1">{{getTotalHt() | currency:'EUR':'symbol':undefined:'fr-FR'}}</td>
+    </tr>
+    <tr>
+      <td colspan="5" style="border: none"></td>
+      <td colspan="1">TVA ({{getTauxTVA()}}%)</td>
+      <td colspan="1">{{getTva() | currency:'EUR':'symbol':undefined:'fr-FR'}}</td>
+    </tr>
+    <tr>
+      <td colspan="5" style="border: none"></td>
+      <td colspan="1" style="font-weight: bold">TOTAL TTC</td>
+      <td colspan="1">{{getTotalTtc() | currency:'EUR':'symbol':undefined:'fr-FR'}}</td>
+    </tr>
+    <tr>
+      <td colspan="6" style="border: none"></td>
+      <td colspan="1">
+        <a class="btn btn-primary" routerLink="/pay">
+          <span class="material-icons align-middle">euro_symbol</span> Payer
+        </a>
+      </td>
+    </tr>
+    </tfoot>
+  </table>
+</ng-template>

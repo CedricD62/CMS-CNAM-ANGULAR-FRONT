@@ -7,10 +7,12 @@ import { HomepageViewModule } from './homepage-view/homepage-view.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderModule } from './shared/header/header.module';
+import { PanierComponent } from './panier/panier.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PanierComponent
   ],
   imports: [
     BrowserModule,

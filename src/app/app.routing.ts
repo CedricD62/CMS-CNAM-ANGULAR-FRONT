@@ -1,6 +1,7 @@
 import { Routes } from "@angular/router";
+import {PanierComponent} from "./panier/panier.component";
 
-export const routes: Routes = 
+export const routes: Routes =
 [
     {
         path: '',
@@ -29,5 +30,9 @@ export const routes: Routes =
     {
         path: 'variant',
         loadChildren: () => import('./controllers/variant/variant.module').then(m =>m.VariantModule)
-    }
+    },
+  {
+    path: 'panier',
+    component : PanierComponent
+  }
 ];

@@ -1,4 +1,4 @@
-import { Produit } from "./produit";
+
 
 export interface Variant
 {
@@ -7,5 +7,4 @@ export interface Variant
     Descriptif:string;
     DateAjout:Date;
     EstActif:boolean;
-    Produits:Produit[];
 }

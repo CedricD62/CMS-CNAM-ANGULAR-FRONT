@@ -1,4 +1,4 @@
-import { Produit } from "./produit";
+
 
 export interface Tag
 {
@@ -6,5 +6,4 @@ export interface Tag
     Name:string;
     DateAjout:Date;
     EstActif:boolean;
-    Produits:Produit[];
 }

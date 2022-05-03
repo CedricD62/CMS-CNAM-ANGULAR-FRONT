@@ -1,5 +1,5 @@
 
-import { Produit } from "./produit";
+
 
 export interface Image
 {
@@ -9,5 +9,4 @@ export interface Image
     Url:string;
     DateAjout:Date;
     EstActif:boolean;
-    Produits:Produit[];
 }
