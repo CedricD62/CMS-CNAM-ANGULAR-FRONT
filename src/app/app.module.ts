@@ -8,6 +8,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderModule } from './shared/header/header.module';
 import { PanierComponent } from './panier/panier.component';
+import localeFr from '@angular/common/locales/fr';
+import {registerLocaleData} from "@angular/common";
+registerLocaleData(localeFr);
 
 @NgModule({
   declarations: [

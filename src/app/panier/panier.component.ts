@@ -3,6 +3,7 @@ import {PanierService} from "../services/panier.service";
 import {Produit} from "../interfaces/produit";
 import {produits} from "../mocks/mock-products-panier";
 
+
 @Component({
   selector: 'app-panier',
   templateUrl: './panier.component.html',
@@ -47,6 +48,7 @@ export class PanierComponent implements OnInit {
   getSsTotal(Id: string) {
     let produitQte = this.produits.filter(v => v.Id == Id);
     let somme = 0;
+    console.log(produitQte)
     produitQte.forEach(s => somme += s.Price.valueOf());
     return somme;
   }

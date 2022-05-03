@@ -25,9 +25,9 @@
       <td>{{id + 1}}</td>
       <td>{{produit.Name}}</td>
       <td>{{produit.Price.valueOf() | currency:'EUR':'symbol':undefined:'fr-FR'}}</td>
-      <td>{{getQte(produit.Id)}} %</td>
+      <td>{{getQte(produit.Id)}}</td>
       <td>{{produit.Tva.valueOf()}} %</td>
-      <td>{{getSsTotal(produit.Id) | currency:'EUR':'symbol':undefined:'fr-FR'}} %</td>
+      <td>{{getSsTotal(produit.Id) | currency:'EUR':'symbol':undefined:'fr-FR'}} </td>
 
     </tr>
     </tbody>
