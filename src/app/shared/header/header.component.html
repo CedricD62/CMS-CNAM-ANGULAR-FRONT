@@ -2,7 +2,7 @@
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
       <mat-icon>menu</mat-icon>
     </button>
-    <span>DB Movies</span>
+    <span>Acheter.com</span>
     <span class="spacer"></span>
     <a mat-button [routerLink]="['/']">Homepage</a>
     <a mat-button [routerLink]="['/produit/add']">Ajouter un produit</a>
@@ -11,4 +11,6 @@
     <a mat-button [routerLink]="['/stock/add']">Ajouter un stock</a>
     <a mat-button [routerLink]="['/tag/add']">Ajouter un tag</a>
     <a mat-button [routerLink]="['/variant/add']">Ajouter un variant</a>
+
+    <a mat-button [routerLink]="['/panier']" class="panier-icon"><span class="material-icons align-middle">shopping_cart</span> Panier ({{majNbreArticlesPanier()}} articles)</a>
   </mat-toolbar>
