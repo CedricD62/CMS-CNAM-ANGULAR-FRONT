@@ -13,7 +13,7 @@ import { Variant } from 'src/app/interfaces/variant';
   styleUrls: ['./produit-add.component.scss']
 })
 export class ProduitAddComponent implements OnInit {
-  Id!:Number
+  Id!:string
   Name!:string;
   Price!:Number;
   Tva!:Number;
@@ -31,7 +31,7 @@ export class ProduitAddComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    
+
   }
 
   onSubmit(): void{
@@ -49,9 +49,8 @@ export class ProduitAddComponent implements OnInit {
       DateAjout: this.DateAjout,
       IsArchived: false
     };
-    
+
     this.produitService.createProduit(produit).subscribe(() =>{
-      this.Id =0;
       this.Name;
       this.Price;
       this.Tva;
