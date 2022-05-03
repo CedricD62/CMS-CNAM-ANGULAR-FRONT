@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
-import {ProduitId} from "../appInterfaces/produits/Produit";
+import {Produit} from "../interfaces/produit";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PanierService {
 
-  produits: ProduitId[] = [];
+  produits: Produit[] = [];
   nbreArticlePanier = 0;
 
   constructor() { }
 
-  ajouterPanier(idProduit : ProduitId) {
-    this.produits.push(idProduit);
+  ajouterPanier(produit : Produit) {
+    this.produits.push(produit);
     this.nbreArticlePanier = this.produits.length;
   }
 
