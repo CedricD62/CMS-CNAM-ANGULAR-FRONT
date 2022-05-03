@@ -50,7 +50,7 @@ export const
 
     },
     {
-      Id : "12345",
+      Id : "12346",
       Name : "PC",
       Price : 1554.99,
       Tva : 20,
@@ -97,10 +97,10 @@ export const
 
     },
     {
-      Id : "12345",
+      Id : "12347",
       Name : "Vodka",
       Price : 14.99,
-      Tva : 20,
+      Tva : 5.5,
       DateAjout: new Date(),
       Description: {
         Id : "321321",

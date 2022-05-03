@@ -12,6 +12,7 @@ import {produits} from "../mocks/mock-products-panier";
 export class PanierComponent implements OnInit {
 
   produits!: Produit[];
+  produitsWithoutDuplicate!: Produit[]
 
   constructor(
     private panier: PanierService
@@ -20,24 +21,25 @@ export class PanierComponent implements OnInit {
   ngOnInit() {
     this.produits = this.panier.getPanier();
     this.produits = produits;
-  }
-
-  getTauxTVA() {
-    return 20;
+    this.produitsWithoutDuplicate = produits.filter((n,i) => produits.indexOf(n) === i)
   }
 
   getTotalTtc() {
     let somme = 0;
-    this.produits.forEach(s => somme += s.Price.valueOf());
+    this.produits.forEach(s => somme += this.getSsTotalHT(s.Id) + this.getTvaAmount(s.Id));
     return somme;
   }
 
   getTva() {
-    return this.getTotalTtc() / 100 * this.getTauxTVA();
+    let somme = 0;
+    this.produits.forEach(s => somme += this.getTvaAmount(s.Id))
+    return somme;
   }
 
   getTotalHt() {
-    return this.getTotalTtc() - this.getTva();
+    let somme = 0;
+    this.produits.forEach(s => somme += this.getSsTotalHT(s.Id))
+    return somme;
   }
 
   getQte(Id: string) {
@@ -45,11 +47,43 @@ export class PanierComponent implements OnInit {
     return produitQte.length;
   }
 
-  getSsTotal(Id: string) {
+  getSsTotalHT(Id: string) {
     let produitQte = this.produits.filter(v => v.Id == Id);
     let somme = 0;
-    console.log(produitQte)
     produitQte.forEach(s => somme += s.Price.valueOf());
     return somme;
+  }
+
+  getSsTotalTTC(Id: string) {
+        return this.getSsTotalHT(Id) + this.getTvaAmount(Id)
+  }
+
+  getTvaAmount(Id: string) {
+    let produit = produits.filter(p => p.Id == Id);
+    let tva = produit[0].Tva.valueOf()
+    let priceProduit = this.getSsTotalHT(Id)
+    return priceProduit / 100 * tva
+  }
+
+  removeProduct(Id: string) {
+    if (produits.filter(p => p.Id == Id).length > 1){
+      let produit = produits.filter(p => p.Id == Id);
+      let index = produits.indexOf(produit[0]);
+      produits.splice(index, 1)
+    }
+    else
+    {
+      let produit = produits.filter(p => p.Id == Id);
+      let index = produits.indexOf(produit[0]);
+      produits.splice(index, 1)
+      let indexInNoDuplicate = this.produitsWithoutDuplicate.indexOf(produit[0])
+      this.produitsWithoutDuplicate.splice(indexInNoDuplicate, 1)
+    }
+
+  }
+
+  addProduct(Id: string) {
+    let produit = produits.filter(p => p.Id == Id)
+    produits.push(produit[0])
   }
 }
