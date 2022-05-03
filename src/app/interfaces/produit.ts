@@ -3,10 +3,11 @@ import { Stock } from "./stock";
 import { Image } from "./image";
 import { Tag } from "./tag";
 import { Variant } from "./variant";
+import { UUID } from 'angular2-uuid';
 
 export interface Produit 
 {
-    Id:Number;
+    Id:UUID;
     Name:string;
     Price:Number;
     Tva:Number;

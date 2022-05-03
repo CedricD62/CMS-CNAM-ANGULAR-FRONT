@@ -17,11 +17,11 @@ export class ListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //this.produits = this.produitService.getProduits();
+    this.produitService.getProduits();
   }
 
   deleteProduit(produit: Produit): void {
-    this.produitService.deleteProduit(produit.Id!).subscribe(()=> {
+    this.produitService.deleteProduit(produit.Id).subscribe(()=> {
       console.log('DELETE')
     });
   }

@@ -13,3 +13,82 @@
             </div>
     </mat-card-content>
 </mat-card>
+
+<form asp-controller="Admin" asp-action="SaveProduct" method="post" enctype="multipart/form-data">
+    <input name="title" type="hidden" value="@nameof(Product)" />
+
+    <fieldset>
+            <legend> Product informations</legend>
+
+            <div class="form-group">
+                <label for="Nom">Nom : </label>
+                <input type="text" id="Nom" name="Nom" required />
+            </div>
+            <div class="form-group">
+                <label for="Origine">Origine : </label>
+                <input type="text" id="Origine" name="Origine" required />
+            </div>
+            <div class="form-group">
+                <label for="Categorie">Catégorie : </label>
+                <input type="text" id="Categorie" name="Categorie" required />
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend> Price informations</legend>
+
+            <div class="form-group">
+                <label for="Prix">Prix : </label>
+                <input type="number" id="Prix" min="1" name="Prix" value="1">
+            </div>
+            <p>Le produit fait-il l'objet d'une promotion ? </p>
+            <div class="form-group">
+                <input type="radio" id="Oui" min="1" name="remise" value="1">
+                <label for="Oui">Oui</label>
+
+                <input type="radio" id="Non" min="1" name="remise" value="0">
+                <label for="Non">Non</label>
+            </div>
+            <div class="form-group">
+                <label for="RemiseMontant">Montant de la remise</label>
+                <input type="number" id="RemiseMontant" min="1" name="RemiseMontant" value="1">
+            </div>
+            <div class="form-group">
+                <label for="FirstDiscountDay">Date début de remise : </label>
+                <input type="Date" id="FirstDiscountDay" name="FirstDiscountDay" required />
+            </div>
+            <div class="form-group">
+                <label for="LastDiscountDay">Date fin de remise :</label>
+                <input type="Date" id="LastDiscountDay" name="LastDiscountDay" required />
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend> Stock informations</legend>
+
+            <div class="form-group">
+                <label for="quantite">Quantité</label>
+                <input type="number" id="quantite" min="1" name="quantite" value="1">
+            </div>
+            <p>@nameof(Product) @nameof(Product.Stock.HasStock)</p>
+            <div class="form-group">
+                <input type="radio" id="Yes" min="1" name="Product Has Stock" value="1">
+                <label for="Yes">yes</label>
+
+                <input type="radio" id="No" min="1" name="Product Has Stock" value="0">
+                <label for="No">No</label>
+            </div>
+            <div class="form-group">
+                <label for="LastReplenishmentDate">LastReplenishmentDate</label>
+                <input type="Date" id="LastReplenishmentDate" name="Product Last Replenishment Date" required />
+            </div>
+            <div class="form-group">
+                <label for="NextReplenishmentDate">NextReplenishmentDate</label>
+                <input type="Date" id="NextReplenishmentDate" name="Product Next Replenishment Date" required />
+            </div>
+        </fieldset>
+
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>

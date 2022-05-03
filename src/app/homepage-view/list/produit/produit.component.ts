@@ -20,5 +20,4 @@ export class ProduitComponent implements OnInit {
   onClick():void{
     this.delete.emit(this.produit);
   }
-
 }
