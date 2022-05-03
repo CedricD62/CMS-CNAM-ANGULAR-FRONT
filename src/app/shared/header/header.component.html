@@ -11,6 +11,12 @@
     <a mat-button [routerLink]="['/stock/add']">Ajouter un stock</a>
     <a mat-button [routerLink]="['/tag/add']">Ajouter un tag</a>
     <a mat-button [routerLink]="['/variant/add']">Ajouter un variant</a>
-
+  <div *ngIf="nbreArticlesPanier > 1; then thenBlock else elseBlock"></div>
+  <ng-template #thenBlock>
     <a mat-button [routerLink]="['/panier']" class="panier-icon"><span class="material-icons align-middle">shopping_cart</span> Panier ({{majNbreArticlesPanier()}} articles)</a>
+  </ng-template>
+
+  <ng-template #elseBlock>
+    <a mat-button [routerLink]="['/panier']" class="panier-icon"><span class="material-icons align-middle">shopping_cart</span> Panier ({{majNbreArticlesPanier()}} article)</a>
+  </ng-template>
   </mat-toolbar>
