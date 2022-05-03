@@ -20,7 +20,7 @@ export class PanierComponent implements OnInit {
 
   ngOnInit() {
     this.produits = this.panier.getPanier();
-    this.produits = produits;
+    this.produits = produits; //valeurs des produits mockés en attendant la page produit qui doit appeler la méthode ajouter au panier!
     this.produitsWithoutDuplicate = produits.filter((n,i) => produits.indexOf(n) === i)
   }
 
