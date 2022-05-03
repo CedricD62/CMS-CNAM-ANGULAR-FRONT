@@ -4,9 +4,9 @@ import { Image } from "./image";
 import { Tag } from "./tag";
 import { Variant } from "./variant";
 
-export interface Produit 
+export interface Produit
 {
-    Id:Number;
+    Id:string;
     Name:string;
     Price:Number;
     Tva:Number;

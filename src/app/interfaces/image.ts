@@ -1,9 +1,9 @@
-import { StringMapWithRename } from "@angular/compiler/src/compiler_facade_interface";
+
 import { Produit } from "./produit";
 
-export interface Image 
+export interface Image
 {
-    Id:Number;
+    Id:string;
     Name:string;
     Information:string;
     Url:string;

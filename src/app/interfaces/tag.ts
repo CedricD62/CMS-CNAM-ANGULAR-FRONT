@@ -1,8 +1,8 @@
 import { Produit } from "./produit";
 
-export interface Tag 
+export interface Tag
 {
-    Id:Number;
+    Id:string;
     Name:string;
     DateAjout:Date;
     EstActif:boolean;
