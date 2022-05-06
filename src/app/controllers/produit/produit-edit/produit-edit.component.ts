@@ -22,7 +22,7 @@ export class ProduitEditComponent implements OnInit {
   ) {
     this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>{
-        return this.produitService.getProduit(parseInt(params.get('id')!))
+        return this.produitService.getProduit(params.get('id')!)
       })
     ).subscribe((produit: Produit) => {
       this.produit = produit;

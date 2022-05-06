@@ -2,7 +2,7 @@ import { Produit } from "./produit";
 
 export interface Variant 
 {
-    Id:Number;
+    Id:string;
     Name:string;
     Descriptif:string;
     DateAjout:Date;

@@ -4,7 +4,7 @@ import { UUID } from 'angular2-uuid';
 
 export interface Image 
 {
-    Id:UUID;
+    Id:string;
     Name:string;
     Information:string;
     Url:string;

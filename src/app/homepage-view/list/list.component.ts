@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Produit } from 'src/app/interfaces/produit';
 import { ProduitService } from 'src/app/services/produit.service';
 
@@ -17,7 +18,7 @@ export class ListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.produitService.getProduits();
+ this.produitService.getProduits().subscribe(res => this.produits = res);
   }
 
   deleteProduit(produit: Produit): void {

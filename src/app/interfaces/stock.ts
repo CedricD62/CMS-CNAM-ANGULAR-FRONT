@@ -2,7 +2,7 @@ import { Produit } from "./produit";
 
 export interface Stock 
 {
-    Id:Number;
+    Id:string;
     Produit:Produit;
     DateReapprovisionnement: Date;
     Quantite:Number;

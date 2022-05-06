@@ -1,6 +1,6 @@
 export interface Description 
 {
-    Id:Number;
+    Id:string;
     Name:string;
     Information:string;
     DateDescription:Date;

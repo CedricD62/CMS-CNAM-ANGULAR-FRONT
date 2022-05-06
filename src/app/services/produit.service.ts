@@ -10,26 +10,25 @@ import { UUID } from 'angular2-uuid';
 export class ProduitService {
 
   constructor( private readonly httpClient: HttpClient) { }
-  private readonly baseUrl = 'https://localhost:44355/api/'
-  list! : Produit[]
+  private readonly baseUrl = 'https://localhost:44355/api/Produit'
 
   getProduits(): Observable<Produit[]> {
-    return this.httpClient.get<Produit[]>(this.baseUrl);
+    return this.httpClient.get<Produit[]>('https://localhost:44355/api/Produit');
   }
 
-  getProduit(id: Number): Observable<Produit> {
-    return this.httpClient.get<Produit>(this.baseUrl);
+  getProduit(id: string): Observable<Produit> {
+    return this.httpClient.get<Produit>('https://localhost:44355/api/Produit/'+id);
   }
 
   createProduit(produit: Produit): Observable<Produit>{
-    return this.httpClient.post<Produit>('api/produit', produit);
+    return this.httpClient.post<Produit>('https://localhost:44355/api/Produit', produit);
   }
 
   updateProduit(produit: Produit): Observable<Produit>{
-    return this.httpClient.put<Produit>(`/api/produit/${produit.Id}`, produit);
+    return this.httpClient.put<Produit>('https://localhost:44355/api/Produit/'+ produit.Id, produit);
   }
 
   deleteProduit(id:UUID): Observable<void>{
-    return this.httpClient.delete<void>(`/api/produit/${id}`);
+    return this.httpClient.delete<void>(('https://localhost:44355/api/Produit/'+id));
   }
 }
