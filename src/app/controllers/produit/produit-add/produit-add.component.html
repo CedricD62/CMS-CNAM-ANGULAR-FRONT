@@ -1,4 +1,4 @@
-<mat-card>
+<!-- <mat-card>
     <mat-card-title>Ajouter un produit<span *ngIf="Name"> : {{Name}}</span></mat-card-title>
     <mat-card-content>
         <form #produitAddForm ="ngForm" (ngSubmit)="onSubmit()">
@@ -12,10 +12,9 @@
                 <p *ngIf="NameControl.errors?.['minlength']"> Le titre comporter deux caractères minimum</p>
             </div>
     </mat-card-content>
-</mat-card>
+</mat-card> -->
 
-<form asp-controller="Admin" asp-action="SaveProduct" method="post" enctype="multipart/form-data">
-    <input name="title" type="hidden" value="@nameof(Product)" />
+<form #produitAddForm ="ngForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
 
     <fieldset>
             <legend> Product informations</legend>
@@ -70,7 +69,7 @@
                 <label for="quantite">Quantité</label>
                 <input type="number" id="quantite" min="1" name="quantite" value="1">
             </div>
-            <p>@nameof(Product) @nameof(Product.Stock.HasStock)</p>
+            <p>Stock du produit</p>
             <div class="form-group">
                 <input type="radio" id="Yes" min="1" name="Product Has Stock" value="1">
                 <label for="Yes">yes</label>
@@ -79,8 +78,88 @@
                 <label for="No">No</label>
             </div>
             <div class="form-group">
-                <label for="LastReplenishmentDate">LastReplenishmentDate</label>
-                <input type="Date" id="LastReplenishmentDate" name="Product Last Replenishment Date" required />
+                <label for="NextReplenishmentDate">NextReplenishmentDate</label>
+                <input type="Date" id="NextReplenishmentDate" name="Product Next Replenishment Date" required />
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend> Image informations</legend>
+
+            <div class="form-group">
+                <label for="quantite">Quantité</label>
+                <input type="number" id="quantite" min="1" name="quantite" value="1">
+            </div>
+            <p>Stock du produit</p>
+            <div class="form-group">
+                <input type="radio" id="Yes" min="1" name="Product Has Stock" value="1">
+                <label for="Yes">yes</label>
+
+                <input type="radio" id="No" min="1" name="Product Has Stock" value="0">
+                <label for="No">No</label>
+            </div>
+            <div class="form-group">
+                <label for="NextReplenishmentDate">NextReplenishmentDate</label>
+                <input type="Date" id="NextReplenishmentDate" name="Product Next Replenishment Date" required />
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend> Tag informations</legend>
+
+            <div class="form-group">
+                <label for="quantite">Quantité</label>
+                <input type="number" id="quantite" min="1" name="quantite" value="1">
+            </div>
+            <p>Stock du produit</p>
+            <div class="form-group">
+                <input type="radio" id="Yes" min="1" name="Product Has Stock" value="1">
+                <label for="Yes">yes</label>
+
+                <input type="radio" id="No" min="1" name="Product Has Stock" value="0">
+                <label for="No">No</label>
+            </div>
+            <div class="form-group">
+                <label for="NextReplenishmentDate">NextReplenishmentDate</label>
+                <input type="Date" id="NextReplenishmentDate" name="Product Next Replenishment Date" required />
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend> Variant informations</legend>
+
+            <div class="form-group">
+                <label for="quantite">Quantité</label>
+                <input type="number" id="quantite" min="1" name="quantite" value="1">
+            </div>
+            <p>Stock du produit</p>
+            <div class="form-group">
+                <input type="radio" id="Yes" min="1" name="Product Has Stock" value="1">
+                <label for="Yes">yes</label>
+
+                <input type="radio" id="No" min="1" name="Product Has Stock" value="0">
+                <label for="No">No</label>
+            </div>
+            <div class="form-group">
+                <label for="NextReplenishmentDate">NextReplenishmentDate</label>
+                <input type="Date" id="NextReplenishmentDate" name="Product Next Replenishment Date" required />
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend> Description informations</legend>
+
+            <div class="form-group">
+                <label for="quantite">Quantité</label>
+                <input type="number" id="quantite" min="1" name="quantite" value="1">
+            </div>
+            <p>Stock du produit</p>
+            <div class="form-group">
+                <input type="radio" id="Yes" min="1" name="Product Has Stock" value="1">
+                <label for="Yes">yes</label>
+
+                <input type="radio" id="No" min="1" name="Product Has Stock" value="0">
+                <label for="No">No</label>
             </div>
             <div class="form-group">
                 <label for="NextReplenishmentDate">NextReplenishmentDate</label>
