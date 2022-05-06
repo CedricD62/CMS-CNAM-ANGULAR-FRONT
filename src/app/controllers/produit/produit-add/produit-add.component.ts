@@ -13,7 +13,7 @@ import { Variant } from 'src/app/interfaces/variant';
   styleUrls: ['./produit-add.component.scss']
 })
 export class ProduitAddComponent implements OnInit {
-  Id!:Number
+  Id!:string
   Name!:string;
   Price!:Number;
   Tva!:Number;
@@ -51,7 +51,7 @@ export class ProduitAddComponent implements OnInit {
     };
     
     this.produitService.createProduit(produit).subscribe(() =>{
-      this.Id =0;
+      this.Id;
       this.Name;
       this.Price;
       this.Tva;

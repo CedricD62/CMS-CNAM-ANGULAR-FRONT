@@ -15,6 +15,7 @@ export class ProduitComponent implements OnInit {
 
   ngOnInit(): void {
     this.produit = this.produitModel;
+    console.log(this.produitModel);
   }
 
   onClick():void{
