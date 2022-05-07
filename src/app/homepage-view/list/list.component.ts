@@ -22,7 +22,7 @@ export class ListComponent implements OnInit {
   }
 
   deleteProduit(produit: Produit): void {
-    this.produitService.deleteProduit(produit.Id).subscribe(()=> {
+    this.produitService.deleteProduit(produit.id).subscribe(()=> {
       console.log('DELETE')
     });
   }

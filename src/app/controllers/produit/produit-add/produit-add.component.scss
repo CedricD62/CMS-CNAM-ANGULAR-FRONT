@@ -1,0 +1,31 @@
+:host{
+    label,
+    fieldset,
+    form-group,
+    input{
+        display: block;
+    }
+
+    input{
+        margin-bottom: .5rem;
+        padding: auto;
+        margin-right: 2rem;
+    }
+    p{
+        color: red;
+    }
+    fieldset{
+        display: flex;
+        align-content: center;
+        width: fit-content;
+        align-items: center;
+        padding: 2%;
+        margin: 2%;
+        border-color: lightskyblue;
+    }
+    form-group{
+        display: inline-flex;
+        width: fit-content;
+        align-items: baseline;
+    }
+}

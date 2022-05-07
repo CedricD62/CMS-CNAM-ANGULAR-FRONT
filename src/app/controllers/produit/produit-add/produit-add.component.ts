@@ -13,18 +13,18 @@ import { Variant } from 'src/app/interfaces/variant';
   styleUrls: ['./produit-add.component.scss']
 })
 export class ProduitAddComponent implements OnInit {
-  Id!:string
+  id!:string
   name!:string;
-  Price!:Number;
-  Tva!:Number;
-  Description!:Description;
-  Stock!:Stock;
-  Images!:Image[];
-  Tags!:Tag[];
-  Variants!:Variant[];
-  DateAjout!:Date;
-  IsArchived!:Boolean
-  isCreated = false;
+  price!:Number;
+  tva!:Number;
+  description!:Description;
+  stock!: Stock;
+  images!:Image[];
+  tags!:Tag[];
+  stickQ!:Number;
+  variants!:Variant[];
+  dateAjout!:Date;
+  isArchived!:Boolean;
 
   constructor(
     private readonly produitService: ProduitService
@@ -37,31 +37,31 @@ export class ProduitAddComponent implements OnInit {
   onSubmit(): void{
 
     const produit: Produit = {
-      Id : this.Id,
+      id : this.id,
       name: this.name,
-      Price: this.Price,
-      Tva: this.Tva,
-      Description: this.Description,
-      Stock: this.Stock,
-      Images: this.Images,
-      Tags: this.Tags,
-      Variants: this.Variants,
-      DateAjout: this.DateAjout,
-      IsArchived: false
+      price: this.price,
+      tva: this.tva,
+      description: this.description,
+      stock: this.stock,
+      images: this.images,
+      tags: this.tags,
+      variants: this.variants,
+      dateAjout: this.dateAjout,
+      isArchived: false
     };
     
     this.produitService.createProduit(produit).subscribe(() =>{
-      this.Id;
+      this.id;
       this.name;
-      this.Price;
-      this.Tva;
-      this.Description;
-      this.Stock;
-      this.Images = []
-      this.Tags = []
-      this.Variants;
-      this.DateAjout;
-      this.IsArchived = false;
+      this.price;
+      this.tva;
+      this.description;
+      this.stock;
+      this.images = []
+      this.tags = []
+      this.variants;
+      this.dateAjout;
+      this.isArchived = false;
     });
   }
 }

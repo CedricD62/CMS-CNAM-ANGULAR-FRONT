@@ -13,7 +13,9 @@
             </div>
     </mat-card-content>
 </mat-card> -->
-
+<mat-card>
+    <mat-card-title>Ajouter un produit<span *ngIf="name"> : {{name}}</span></mat-card-title>
+    <mat-card-content>
 <form #produitAddForm ="ngForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
 
     <fieldset>
@@ -30,19 +32,11 @@
 
             <div class="form-group">
                 <label for="Prix">Prix : </label>
-                <input type="text" name="Price" [(ngModel)]="Price" required />
+                <input type="text" name="Price" [(ngModel)]="price" required />
             </div>
             <div class="form-group">
-                <label for="RemiseMontant">Montant de la TVA</label>
-                <input type="text" name="Tva" [(ngModel)]="Tva" required />
-            </div>
-            <div class="form-group">
-                <label for="FirstDiscountDay">Date début de remise : </label>
-                <input type="Date" id="FirstDiscountDay" name="FirstDiscountDay" required />
-            </div>
-            <div class="form-group">
-                <label for="LastDiscountDay">Date fin de remise :</label>
-                <input type="Date" id="LastDiscountDay" name="LastDiscountDay" required />
+                <label for="RemiseMontant">Montant de la TVA : </label>
+                <input type="text" name="Tva" [(ngModel)]="tva" required />
             </div>
         </fieldset>
 
@@ -51,28 +45,20 @@
 
             <div class="form-group">
                 <label for="quantite">Quantité</label>
-                <input type="number" id="quantite" min="1" name="quantite" value="1">
-            </div>
-            <p>Stock du produit</p>
-            <div class="form-group">
-                <input type="radio" id="Yes" min="1" name="Product Has Stock" value="1">
-                <label for="Yes">yes</label>
-
-                <input type="radio" id="No" min="1" name="Product Has Stock" value="0">
-                <label for="No">No</label>
+                <input type="number" min="0" name="quantite" [(ngModel)]="produit.stock.quantite" value="0" required>
             </div>
             <div class="form-group">
-                <label for="NextReplenishmentDate">NextReplenishmentDate</label>
-                <input type="Date" id="NextReplenishmentDate" name="Product Next Replenishment Date" required />
+                <label for="dateReapprovisionnement">Date de réapprovisionnement : </label>
+                <input type="Date" name="dateReapprovisionnement" [(ngModel)]="stock.dateReapprovisionnement" required />
             </div>
         </fieldset>
 
-        <fieldset>
+        <!-- <fieldset>
             <legend> Image informations</legend>
 
             <div class="form-group">
-                <label for="quantite">Quantité</label>
-                <input type="number" id="quantite" min="1" name="quantite" value="1">
+                <label for="name">Nom : </label>
+                <input type="text" name="name" [(ngModel)]="images.[0].name" required>
             </div>
             <p>Stock du produit</p>
             <div class="form-group">
@@ -86,30 +72,9 @@
                 <label for="NextReplenishmentDate">NextReplenishmentDate</label>
                 <input type="Date" id="NextReplenishmentDate" name="Product Next Replenishment Date" required />
             </div>
-        </fieldset>
+        </fieldset> -->
 
-        <fieldset>
-            <legend> Tag informations</legend>
-
-            <div class="form-group">
-                <label for="quantite">Quantité</label>
-                <input type="number" id="quantite" min="1" name="quantite" value="1">
-            </div>
-            <p>Stock du produit</p>
-            <div class="form-group">
-                <input type="radio" id="Yes" min="1" name="Product Has Stock" value="1">
-                <label for="Yes">yes</label>
-
-                <input type="radio" id="No" min="1" name="Product Has Stock" value="0">
-                <label for="No">No</label>
-            </div>
-            <div class="form-group">
-                <label for="NextReplenishmentDate">NextReplenishmentDate</label>
-                <input type="Date" id="NextReplenishmentDate" name="Product Next Replenishment Date" required />
-            </div>
-        </fieldset>
-
-        <fieldset>
+      <!--  <fieldset>
             <legend> Variant informations</legend>
 
             <div class="form-group">
@@ -128,30 +93,18 @@
                 <label for="NextReplenishmentDate">NextReplenishmentDate</label>
                 <input type="Date" id="NextReplenishmentDate" name="Product Next Replenishment Date" required />
             </div>
-        </fieldset>
+        </fieldset> -->
 
         <fieldset>
             <legend> Description informations</legend>
-
             <div class="form-group">
-                <label for="quantite">Quantité</label>
-                <input type="number" id="quantite" min="1" name="quantite" value="1">
-            </div>
-            <p>Stock du produit</p>
-            <div class="form-group">
-                <input type="radio" id="Yes" min="1" name="Product Has Stock" value="1">
-                <label for="Yes">yes</label>
-
-                <input type="radio" id="No" min="1" name="Product Has Stock" value="0">
-                <label for="No">No</label>
-            </div>
-            <div class="form-group">
-                <label for="NextReplenishmentDate">NextReplenishmentDate</label>
-                <input type="Date" id="NextReplenishmentDate" name="Product Next Replenishment Date" required />
+                <label for="information">Information sur le produit : </label>
+                <textarea name="information" [(ngModel)]="produit.description.name" required ></textarea>
             </div>
         </fieldset>
-
     <div class="text-center">
         <button type="submit" class="btn btn-primary">Save</button>
     </div>
 </form>
+</mat-card-content>
+</mat-card>

@@ -1,8 +1,8 @@
 export interface Description 
 {
-    Id:string;
-    Name:string;
-    Information:string;
-    DateDescription:Date;
-    EstActif:boolean;
+    id:string;
+    name:string;
+    information:string;
+    dateDescription:Date;
+    IsArchived:boolean;
 }

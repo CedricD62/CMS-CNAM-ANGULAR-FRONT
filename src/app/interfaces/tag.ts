@@ -2,9 +2,9 @@ import { Produit } from "./produit";
 
 export interface Tag 
 {
-    Id:string;
-    Name:string;
-    DateAjout:Date;
-    EstActif:boolean;
-    Produits:Produit[];
+    id:string;
+    name:string;
+    dateAjout:Date;
+    isArchived:boolean;
+    produits:Produit[];
 }

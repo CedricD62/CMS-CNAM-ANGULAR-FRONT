@@ -40,7 +40,7 @@ export class ProduitEditComponent implements OnInit {
 
   onSubmit(): void{
     const produit: Produit = {
-      id: this.produit.Id,
+      id: this.produit.id,
       ...this.movieForm.value
     }
     this.produitService.updateProduit(produit).subscribe(res =>{

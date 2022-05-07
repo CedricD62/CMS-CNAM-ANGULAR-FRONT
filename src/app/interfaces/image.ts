@@ -4,11 +4,11 @@ import { UUID } from 'angular2-uuid';
 
 export interface Image 
 {
-    Id:string;
-    Name:string;
-    Information:string;
-    Url:string;
-    DateAjout:Date;
-    EstActif:boolean;
-    Produits:Produit[];
+    id:string;
+    name:string;
+    information:string;
+    url:string;
+    dateAjout:Date;
+    isArchived:boolean;
+    produits:Produit[];
 }

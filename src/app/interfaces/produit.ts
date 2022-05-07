@@ -7,15 +7,15 @@ import { UUID } from 'angular2-uuid';
 
 export interface Produit 
 {
-    Id:string;
+    id:string;
     name:string;
-    Price:Number;
-    Tva:Number;
-    Description:Description;
-    Stock:Stock;
-    Images:Image[];
-    Tags:Tag[];
-    Variants:Variant[];
-    DateAjout:Date;
-    IsArchived:boolean;
+    price:Number;
+    tva:Number;
+    description:Description;
+    stock:Stock;
+    images:Image[];
+    tags:Tag[];
+    variants:Variant[];
+    dateAjout:Date;
+    isArchived:boolean;
 }

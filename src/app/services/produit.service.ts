@@ -26,7 +26,7 @@ export class ProduitService {
   }
 
   updateProduit(produit: Produit): Observable<Produit>{
-    return this.httpClient.put<Produit>('https://localhost:44355/api/Produit/'+ produit.Id, produit);
+    return this.httpClient.put<Produit>('https://localhost:44355/api/Produit/'+ produit.id, produit);
   }
 
   deleteProduit(id:UUID): Observable<void>{
