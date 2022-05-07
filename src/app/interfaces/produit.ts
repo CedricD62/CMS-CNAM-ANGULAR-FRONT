@@ -8,7 +8,7 @@ import { UUID } from 'angular2-uuid';
 export interface Produit 
 {
     Id:string;
-    Name:string;
+    name:string;
     Price:Number;
     Tva:Number;
     Description:Description;

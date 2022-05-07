@@ -21,15 +21,7 @@
 
             <div class="form-group">
                 <label for="Nom">Nom : </label>
-                <input type="text" id="Nom" name="Nom" required />
-            </div>
-            <div class="form-group">
-                <label for="Origine">Origine : </label>
-                <input type="text" id="Origine" name="Origine" required />
-            </div>
-            <div class="form-group">
-                <label for="Categorie">Catégorie : </label>
-                <input type="text" id="Categorie" name="Categorie" required />
+                <input type="text" name="name" [(ngModel)]="name" required />
             </div>
         </fieldset>
 
@@ -38,19 +30,11 @@
 
             <div class="form-group">
                 <label for="Prix">Prix : </label>
-                <input type="number" id="Prix" min="1" name="Prix" value="1">
-            </div>
-            <p>Le produit fait-il l'objet d'une promotion ? </p>
-            <div class="form-group">
-                <input type="radio" id="Oui" min="1" name="remise" value="1">
-                <label for="Oui">Oui</label>
-
-                <input type="radio" id="Non" min="1" name="remise" value="0">
-                <label for="Non">Non</label>
+                <input type="text" name="Price" [(ngModel)]="Price" required />
             </div>
             <div class="form-group">
-                <label for="RemiseMontant">Montant de la remise</label>
-                <input type="number" id="RemiseMontant" min="1" name="RemiseMontant" value="1">
+                <label for="RemiseMontant">Montant de la TVA</label>
+                <input type="text" name="Tva" [(ngModel)]="Tva" required />
             </div>
             <div class="form-group">
                 <label for="FirstDiscountDay">Date début de remise : </label>

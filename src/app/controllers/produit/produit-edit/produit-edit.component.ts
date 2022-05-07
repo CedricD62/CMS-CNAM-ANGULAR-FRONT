@@ -27,7 +27,7 @@ export class ProduitEditComponent implements OnInit {
     ).subscribe((produit: Produit) => {
       this.produit = produit;
       this.movieForm = new FormGroup({
-        Name: new FormControl(produit.Name, [
+        Name: new FormControl(produit.name, [
           Validators.required,
           Validators.minLength(2)
         ]),

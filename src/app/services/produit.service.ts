@@ -11,6 +11,7 @@ export class ProduitService {
 
   constructor( private readonly httpClient: HttpClient) { }
   private readonly baseUrl = 'https://localhost:44355/api/Produit'
+  list! : Produit[]
 
   getProduits(): Observable<Produit[]> {
     return this.httpClient.get<Produit[]>('https://localhost:44355/api/Produit');
@@ -21,7 +22,7 @@ export class ProduitService {
   }
 
   createProduit(produit: Produit): Observable<Produit>{
-    return this.httpClient.post<Produit>('https://localhost:44355/api/Produit', produit);
+    return this.httpClient.post<Produit>('https://localhost:44355/api/Produit/', produit);
   }
 
   updateProduit(produit: Produit): Observable<Produit>{

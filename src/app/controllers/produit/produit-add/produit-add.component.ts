@@ -14,7 +14,7 @@ import { Variant } from 'src/app/interfaces/variant';
 })
 export class ProduitAddComponent implements OnInit {
   Id!:string
-  Name!:string;
+  name!:string;
   Price!:Number;
   Tva!:Number;
   Description!:Description;
@@ -38,7 +38,7 @@ export class ProduitAddComponent implements OnInit {
 
     const produit: Produit = {
       Id : this.Id,
-      Name: this.Name,
+      name: this.name,
       Price: this.Price,
       Tva: this.Tva,
       Description: this.Description,
@@ -52,7 +52,7 @@ export class ProduitAddComponent implements OnInit {
     
     this.produitService.createProduit(produit).subscribe(() =>{
       this.Id;
-      this.Name;
+      this.name;
       this.Price;
       this.Tva;
       this.Description;
